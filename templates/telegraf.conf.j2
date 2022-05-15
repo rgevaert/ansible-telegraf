@@ -152,6 +152,11 @@
 {% if telegraf_influxdb_bucket is defined and telegraf_influxdb_bucket != None %}
   bucket = "{{ telegraf_influxdb_bucket }}"
 {% endif %}
+ ## Allow specific buckets for inputs
+{% if telegraf_influxdb_bucket_tag is defined and telegraf_influxdb_bucket_tag != None %}
+  bucket_tag = "{{ telegraf_influxdb_bucket_tag }}"
+  exclude_bucket_tag = true
+{% endif %}
 {% endif %}
 ###############################################################################
 #                                  PLUGINS                                    #
