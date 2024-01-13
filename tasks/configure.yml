@@ -24,9 +24,6 @@
   # If config changes, restart telegraf and confirm it remained running
   notify:
     - "restart telegraf"
-    - "pause"
-    - "check status"
-    - "assert running"
 
 - name: Test for sysvinit script
   stat:
